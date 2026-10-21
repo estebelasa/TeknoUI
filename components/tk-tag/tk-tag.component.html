@@ -1,0 +1,38 @@
+<span
+    class="tk-tag"
+
+    [class.tk-tag--default]="
+        variant() === 'default'
+    "
+
+    [class.tk-tag--primary]="
+        variant() === 'primary'
+    "
+
+    [class.tk-tag--success]="
+        variant() === 'success'
+    "
+
+    [class.tk-tag--warning]="
+        variant() === 'warning'
+    "
+
+    [class.tk-tag--danger]="
+        variant() === 'danger'
+    "
+
+    [class.tk-tag--small]="
+        size() === 'small'
+    "
+
+    [class.tk-tag--medium]="
+        size() === 'medium'
+    "
+
+    [class.tk-tag--large]="
+        size() === 'large'
+    ">
+
+    <ng-content />
+
+</span>

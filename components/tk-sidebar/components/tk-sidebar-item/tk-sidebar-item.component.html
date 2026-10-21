@@ -1,0 +1,21 @@
+<a
+    class="tk-sidebar-item"
+    [class.tk-sidebar-item--selected]="selected()"
+    [class.tk-sidebar-item--collapsed]="collapsed()"
+    [class.tk-sidebar-item--disabled]="item().disabled"
+    [attr.href]="item().disabled ? null : '#' + item().id"
+    (click)="onClick($event)">
+
+    @if (item().icon) {
+        <span class="material-symbols-outlined">
+            {{ item().icon }}
+        </span>
+    }
+
+    @if (!collapsed()) {
+        <span class="tk-sidebar-item__label">
+            {{ item().label }}
+        </span>
+    }
+
+</a>

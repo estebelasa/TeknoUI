@@ -1,0 +1,39 @@
+@use '../../foundation/styles/teknoui';
+
+:host{
+    display:block;
+}
+
+.tk-sidebar{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
+    background-color: var(--tk-background);
+}
+
+.tk-sidebar__header{
+
+}
+
+.tk-sidebar__profile{
+
+}
+
+.tk-sidebar__navigation{
+
+    flex:1;
+
+    overflow:auto;
+
+}
+
+.tk-sidebar__footer{
+
+}
+
+.tk-sidebar__item{
+
+    width:100%;
+
+}

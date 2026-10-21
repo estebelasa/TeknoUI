@@ -1,0 +1,31 @@
+
+:root {
+
+    /* Layout */
+  
+    --tk-sidebar-width:320px;
+    --tk-sidebar-min-width:280px;
+  
+    /* Header */
+  
+    --tk-sidebar-header-padding:var(--tk-space-8);
+  
+    --tk-sidebar-avatar-size:120px;
+  
+    --tk-sidebar-logo-size:48px;
+  
+    /* Navigation */
+  
+    --tk-sidebar-item-height:48px;
+  
+    --tk-sidebar-item-padding-x:var(--tk-space-4);
+  
+    --tk-sidebar-item-padding-y:var(--tk-space-3);
+  
+    --tk-sidebar-item-gap:var(--tk-space-2);
+  
+    /* Footer */
+  
+    --tk-sidebar-footer-padding:var(--tk-space-6);
+  
+}

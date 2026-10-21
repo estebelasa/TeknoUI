@@ -1,0 +1,60 @@
+:root {
+
+    /* ============================================
+       RADIUS
+       ============================================ */
+
+    --tk-tag-radius:
+        var(--tk-base-radius-full);
+
+
+    /* ============================================
+       FONT
+       ============================================ */
+
+    --tk-tag-font-weight:
+        var(--tk-base-font-weight-medium);
+
+
+    /* ============================================
+       SMALL
+       ============================================ */
+
+    --tk-tag-small-font-size:
+        var(--tk-base-font-size-xs);
+
+    --tk-tag-small-padding-x:
+        var(--tk-base-spacing-2);
+
+    --tk-tag-small-padding-y:
+        var(--tk-base-spacing-1);
+
+
+    /* ============================================
+       MEDIUM
+       ============================================ */
+
+    --tk-tag-medium-font-size:
+        var(--tk-base-font-size-sm);
+
+    --tk-tag-medium-padding-x:
+        var(--tk-base-spacing-3);
+
+    --tk-tag-medium-padding-y:
+        var(--tk-base-spacing-1);
+
+
+    /* ============================================
+       LARGE
+       ============================================ */
+
+    --tk-tag-large-font-size:
+        var(--tk-base-font-size-md);
+
+    --tk-tag-large-padding-x:
+        var(--tk-base-spacing-4);
+
+    --tk-tag-large-padding-y:
+        var(--tk-base-spacing-2);
+
+}

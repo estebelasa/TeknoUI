@@ -1,0 +1,63 @@
+:root {
+
+    /* ============================================
+       DEFAULT
+       ============================================ */
+
+    --tk-tag-default-background:
+        var(--tk-surface-secondary);
+
+    --tk-tag-default-color:
+        var(--tk-text-secondary);
+
+    --tk-tag-default-border:
+        var(--tk-border);
+
+
+    /* ============================================
+       PRIMARY
+       ============================================ */
+
+    --tk-tag-primary-background:
+        var(--tk-color-primary-subtle);
+
+    --tk-tag-primary-color:
+        var(--tk-color-primary);
+
+    --tk-tag-primary-border:
+        var(--tk-color-primary);
+
+
+    /* ============================================
+       SUCCESS
+       ============================================ */
+
+    --tk-tag-success-background:
+        var(--tk-status-success-subtle);
+
+    --tk-tag-success-color:
+        var(--tk-status-success);
+
+
+    /* ============================================
+       WARNING
+       ============================================ */
+
+    --tk-tag-warning-background:
+        var(--tk-status-warning-subtle);
+
+    --tk-tag-warning-color:
+        var(--tk-status-warning);
+
+
+    /* ============================================
+       DANGER
+       ============================================ */
+
+    --tk-tag-danger-background:
+        var(--tk-status-danger-subtle);
+
+    --tk-tag-danger-color:
+        var(--tk-status-danger);
+
+}

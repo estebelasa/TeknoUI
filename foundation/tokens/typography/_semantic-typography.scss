@@ -1,0 +1,34 @@
+:root {
+
+    /* Headings */
+  
+    --tk-heading-1-size: var(--tk-font-size-800);
+    --tk-heading-1-weight: var(--tk-font-weight-bold);
+    --tk-heading-1-line-height: var(--tk-line-height-tight);
+  
+    --tk-heading-2-size: var(--tk-font-size-700);
+    --tk-heading-2-weight: var(--tk-font-weight-semibold);
+  
+    --tk-heading-3-size: var(--tk-font-size-600);
+    --tk-heading-3-weight: var(--tk-font-weight-semibold);
+  
+    /* Body */
+  
+    --tk-body-size: var(--tk-font-size-300);
+    --tk-body-weight: var(--tk-font-weight-regular);
+    --tk-body-line-height: var(--tk-line-height-normal);
+  
+    /* Small */
+  
+    --tk-body-small-size: var(--tk-font-size-200);
+  
+    /* Caption */
+  
+    --tk-caption-size: var(--tk-font-size-100);
+  
+    /* Button */
+  
+    --tk-button-font-size: var(--tk-font-size-300);
+    --tk-button-font-weight: var(--tk-font-weight-semibold);
+  
+}

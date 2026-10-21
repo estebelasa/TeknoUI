@@ -1,0 +1,38 @@
+:host {
+    display: block;
+}
+
+.tk-sidebar-profile {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: var(--tk-space-lg);
+
+    border-bottom: 1px solid var(--tk-sidebar-border-color);
+
+    &__avatar {
+        margin-bottom: var(--tk-space-md);
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__subtitle {
+        opacity: .7;
+    }
+
+    &--collapsed {
+
+        .tk-sidebar-profile__name,
+        .tk-sidebar-profile__subtitle {
+
+            display: none;
+
+        }
+
+    }
+
+}

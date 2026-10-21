@@ -1,0 +1,100 @@
+@use '../../foundation/styles/teknoui';
+
+:host {
+
+    display: block;
+
+}
+
+.tk-card {
+
+    display: block;
+
+    background-color:
+        var(--tk-card-background);
+
+    color:
+        var(--tk-card-color);
+
+    border-radius:
+        var(--tk-card-radius);
+
+    border:
+        1px solid var(--tk-card-border-color);
+
+    transition:
+        var(--tk-card-transition);
+
+}
+
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.tk-card--default {
+
+    background-color:
+        var(--tk-card-background);
+
+}
+
+
+.tk-card--outlined {
+
+    background-color:
+        var(--tk-card-outlined-background);
+
+    border-color:
+        var(--tk-card-outlined-border-color);
+
+}
+
+
+.tk-card--elevated {
+
+    background-color:
+        var(--tk-card-elevated-background);
+
+    box-shadow:
+        var(--tk-card-elevated-shadow);
+
+    border-color:
+        transparent;
+
+}
+
+
+/* ============================================
+   PADDING
+   ============================================ */
+
+.tk-card--padding-none {
+
+    padding: 0;
+
+}
+
+
+.tk-card--padding-small {
+
+    padding:
+        var(--tk-card-padding-small);
+
+}
+
+
+.tk-card--padding-medium {
+
+    padding:
+        var(--tk-card-padding-medium);
+
+}
+
+
+.tk-card--padding-large {
+
+    padding:
+        var(--tk-card-padding-large);
+
+}

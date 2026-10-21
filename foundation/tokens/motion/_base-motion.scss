@@ -1,0 +1,29 @@
+:root {
+
+    /* Duration */
+
+    --tk-base-duration-fast:
+        150ms;
+
+    --tk-base-duration-normal:
+        250ms;
+
+    --tk-base-duration-slow:
+        400ms;
+
+
+    /* Easing */
+
+    --tk-base-easing-standard:
+        ease;
+
+    --tk-base-easing-in:
+        ease-in;
+
+    --tk-base-easing-out:
+        ease-out;
+
+    --tk-base-easing-in-out:
+        ease-in-out;
+
+}

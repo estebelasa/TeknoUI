@@ -1,0 +1,38 @@
+:root {
+
+    /* ============================================
+       DEFAULT
+       ============================================ */
+
+    --tk-card-background:
+        var(--tk-surface);
+
+    --tk-card-color:
+        var(--tk-text-primary);
+
+    --tk-card-border-color:
+        var(--tk-border);
+
+
+    /* ============================================
+       OUTLINED
+       ============================================ */
+
+    --tk-card-outlined-background:
+        transparent;
+
+    --tk-card-outlined-border-color:
+        var(--tk-border-strong);
+
+
+    /* ============================================
+       ELEVATED
+       ============================================ */
+
+    --tk-card-elevated-background:
+        var(--tk-surface);
+
+    --tk-card-elevated-shadow:
+        var(--tk-shadow-md);
+
+}

@@ -1,0 +1,30 @@
+<header class="tk-sidebar-header">
+
+    @if (logo()) {
+
+        <img
+            class="tk-sidebar-header__logo"
+            [src]="logo()!"
+            [alt]="title()">
+
+    }
+
+    @if (!collapsed()) {
+
+        <span class="tk-sidebar-header__title">
+
+            {{ title() }}
+
+        </span>
+
+    }
+
+    <button
+        type="button"
+        (click)="collapse.emit()">
+
+        ☰
+
+    </button>
+
+</header>

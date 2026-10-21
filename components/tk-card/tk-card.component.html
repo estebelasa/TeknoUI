@@ -1,0 +1,14 @@
+<article
+    class="tk-card"
+    [class.tk-card--default]="variant() === 'default'"
+    [class.tk-card--outlined]="variant() === 'outlined'"
+    [class.tk-card--elevated]="variant() === 'elevated'"
+
+    [class.tk-card--padding-none]="padding() === 'none'"
+    [class.tk-card--padding-small]="padding() === 'small'"
+    [class.tk-card--padding-medium]="padding() === 'medium'"
+    [class.tk-card--padding-large]="padding() === 'large'">
+
+    <ng-content />
+
+</article>

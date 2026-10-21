@@ -1,0 +1,29 @@
+<aside class="tk-sidebar">
+
+    <tk-sidebar-header
+        [title]="''"
+        [collapsed]="selectors.isCollapsed()"
+        (collapse)="actions.toggle()">
+    </tk-sidebar-header>
+
+    @if (profile()) {
+        <tk-sidebar-profile
+            [profile]="profile()!"
+            [collapsed]="selectors.isCollapsed()">
+        </tk-sidebar-profile>
+    }
+
+    <tk-sidebar-navigation
+        [items]="items()"
+        [collapsed]="selectors.isCollapsed()"
+        [selectedItemId]="selectors.selectedItem()"
+        (itemSelected)="onItemClick($event)">
+    </tk-sidebar-navigation>
+
+    @if (footer()) {
+        <tk-sidebar-footer
+            [footer]="footer()!">
+        </tk-sidebar-footer>
+    }
+
+</aside>

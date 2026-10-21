@@ -1,0 +1,64 @@
+:host {
+    display: block;
+    flex-shrink: 0;
+}
+
+.tk-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 64px;
+
+    padding: var(--tk-sidebar-header-padding);
+
+    background: var(--tk-sidebar-header-background);
+
+    border-bottom: 1px solid var(--tk-sidebar-border-color);
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: var(--tk-space-sm);
+    }
+
+    &__logo {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+    }
+
+    &__title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.tk-sidebar-header button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--tk-color-primary);
+    border-radius: var(--tk-border-radius-medium);
+    background: transparent;
+    color: var(--tk-color-primary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.25rem;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.tk-sidebar-header button:hover {
+    background: var(--tk-color-primary);
+    color: var(--tk-navigation-active-text);
+}

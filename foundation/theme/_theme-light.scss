@@ -1,0 +1,47 @@
+:root,
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --tk-color-primary: var(--tk-base-ghost-green-600);
+  --tk-color-primary-hover: var(--tk-base-ghost-green-700);
+  --tk-color-primary-active: var(--tk-base-ghost-green-800);
+  --tk-color-primary-subtle: var(--tk-base-ghost-green-100);
+
+  --tk-background: var(--tk-base-white);
+  --tk-background-secondary: var(--tk-base-white);
+  --tk-surface: var(--tk-base-white);
+  --tk-surface-secondary: var(--tk-base-ghost-green-50);
+  --tk-surface-tertiary: var(--tk-base-zero-black-100);
+
+  --tk-text-primary: var(--tk-base-zero-black-950);
+  --tk-text-secondary: var(--tk-base-zero-black-950);
+  --tk-text-tertiary: var(--tk-base-zero-black-950);
+  --tk-text-disabled: var(--tk-base-zero-black-400);
+  --tk-text-inverse: var(--tk-base-zero-black-950);
+
+  --tk-border: var(--tk-base-zero-black-200);
+  --tk-border-subtle: var(--tk-base-zero-black-100);
+  --tk-border-strong: var(--tk-base-ghost-green-600);
+  --tk-border-focus: var(--tk-base-ghost-green-500);
+
+  --tk-state-hover: var(--tk-base-ghost-green-100);
+  --tk-state-active: var(--tk-base-ghost-green-200);
+  --tk-state-selected: var(--tk-base-ghost-green-100);
+  --tk-state-disabled: var(--tk-base-zero-black-100);
+
+  --tk-navigation-background: var(--tk-base-white);
+  --tk-navigation-hover: var(--tk-base-zero-black-100);
+  --tk-navigation-active: var(--tk-base-ghost-green-500);
+  --tk-navigation-active-text: var(--tk-base-zero-black-950);
+
+  --tk-status-success: var(--tk-base-ghost-green-700);
+  --tk-status-success-subtle: var(--tk-base-ghost-green-100);
+  --tk-status-warning: #a16207;
+  --tk-status-warning-subtle: #fef3c7;
+  --tk-status-danger: #b91c1c;
+  --tk-status-danger-subtle: #fee2e2;
+
+  --tk-shadow-sm: 0 1px 2px rgb(5 7 6 / 0.08);
+  --tk-shadow-md: 0 8px 24px rgb(5 7 6 / 0.14);
+  --tk-shadow-lg: 0 16px 40px rgb(5 7 6 / 0.18);
+}

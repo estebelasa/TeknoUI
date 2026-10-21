@@ -1,0 +1,136 @@
+@use '../../foundation/styles/teknoui';
+
+
+:host {
+
+    display: inline-flex;
+
+}
+
+.tk-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    border-radius:
+        var(--tk-tag-radius);
+
+    font-weight:
+        var(--tk-tag-font-weight);
+
+    border:
+        1px solid transparent;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.tk-tag--default {
+
+    background-color:
+        var(--tk-tag-default-background);
+
+    color:
+        var(--tk-tag-default-color);
+
+    border-color:
+        var(--tk-tag-default-border);
+
+}
+
+
+.tk-tag--primary {
+
+    background-color:
+        var(--tk-tag-primary-background);
+
+    color:
+        var(--tk-tag-primary-color);
+
+    border-color:
+        var(--tk-tag-primary-border);
+
+}
+
+
+.tk-tag--success {
+
+    background-color:
+        var(--tk-tag-success-background);
+
+    color:
+        var(--tk-tag-success-color);
+
+}
+
+
+.tk-tag--warning {
+
+    background-color:
+        var(--tk-tag-warning-background);
+
+    color:
+        var(--tk-tag-warning-color);
+
+}
+
+
+.tk-tag--danger {
+
+    background-color:
+        var(--tk-tag-danger-background);
+
+    color:
+        var(--tk-tag-danger-color);
+
+}
+
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.tk-tag--small {
+
+    font-size:
+        var(--tk-tag-small-font-size);
+
+    padding:
+        var(--tk-tag-small-padding-y)
+        var(--tk-tag-small-padding-x);
+
+}
+
+
+.tk-tag--medium {
+
+    font-size:
+        var(--tk-tag-medium-font-size);
+
+    padding:
+        var(--tk-tag-medium-padding-y)
+        var(--tk-tag-medium-padding-x);
+
+}
+
+
+.tk-tag--large {
+
+    font-size:
+        var(--tk-tag-large-font-size);
+
+    padding:
+        var(--tk-tag-large-padding-y)
+        var(--tk-tag-large-padding-x);
+
+}

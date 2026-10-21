@@ -1,0 +1,61 @@
+:root {
+
+    /* Container */
+  
+    --tk-sidebar-transition:
+        var(--tk-transition-default);
+
+    --tk-sidebar-background:
+        var(--tk-navigation-background);
+
+    --tk-sidebar-color:
+        var(--tk-text-primary);
+
+    --tk-sidebar-border:
+        var(--tk-border);
+  
+    --tk-sidebar-shadow:
+        var(--tk-floating-shadow);
+  
+    /* Header */
+  
+    --tk-sidebar-title-size:
+        var(--tk-heading-2-size);
+  
+    --tk-sidebar-title-weight:
+        var(--tk-heading-2-weight);
+  
+    --tk-sidebar-subtitle-size:
+        var(--tk-body-size);
+  
+    /* Navigation */
+  
+    --tk-sidebar-item-color:
+        var(--tk-color-text);
+  
+    --tk-sidebar-item-font-size:
+        var(--tk-body-size);
+  
+    --tk-sidebar-item-font-weight:
+        var(--tk-font-weight-medium);
+  
+    --tk-sidebar-item-radius:
+        var(--tk-border-radius-medium);
+  
+    --tk-sidebar-item-hover-background:
+        var(--tk-navigation-hover);
+
+    --tk-sidebar-item-active-background:
+        var(--tk-navigation-active);
+
+    --tk-sidebar-item-active-color:
+        var(--tk-sidebar-item-color);
+  
+    /* Footer */
+  
+    --tk-sidebar-footer-color:
+        var(--tk-color-text-secondary);
+  
+    /* Motion */
+  
+}
