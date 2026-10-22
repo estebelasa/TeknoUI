@@ -27,11 +27,14 @@
   
     --tk-sidebar-subtitle-size:
         var(--tk-body-size);
-  
+
+    --tk-sidebar-header-background:
+        var(--tk-sidebar-background);
+
     /* Navigation */
-  
+
     --tk-sidebar-item-color:
-        var(--tk-color-text);
+        var(--tk-text-primary);
   
     --tk-sidebar-item-font-size:
         var(--tk-body-size);
@@ -54,7 +57,7 @@
     /* Footer */
   
     --tk-sidebar-footer-color:
-        var(--tk-color-text-secondary);
+        var(--tk-text-secondary);
   
     /* Motion */
   

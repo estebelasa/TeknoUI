@@ -1,7 +1,7 @@
 :root {
 
-    --tk-transition-default: var(--tk-motion-normal);
-  
-    --tk-transition-fast: var(--tk-motion-fast);
+    --tk-transition-default: var(--tk-base-duration-normal) var(--tk-base-easing-standard);
+
+    --tk-transition-fast: var(--tk-base-duration-fast) var(--tk-base-easing-standard);
   
 }

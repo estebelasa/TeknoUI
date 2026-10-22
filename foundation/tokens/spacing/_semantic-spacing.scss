@@ -1,13 +1,27 @@
 :root {
 
-    --tk-page-padding: var(--tk-space-8);
-  
-    --tk-section-padding: var(--tk-space-16);
-  
-    --tk-card-padding: var(--tk-space-6);
-  
-    --tk-control-gap: var(--tk-space-3);
+    /* Scale used by components */
+
+    --tk-space-xs: var(--tk-base-spacing-1);
+
+    --tk-space-sm: var(--tk-base-spacing-2);
+
+    --tk-space-md: var(--tk-base-spacing-4);
+
+    --tk-space-lg: var(--tk-base-spacing-6);
+
+    --tk-space-xl: var(--tk-base-spacing-8);
+
+    /* Layout */
+
+    --tk-page-padding: var(--tk-base-spacing-8);
+
+    --tk-section-padding: var(--tk-base-spacing-16);
+
+    --tk-card-padding: var(--tk-base-spacing-6);
+
+    --tk-control-gap: var(--tk-base-spacing-3);
 
     --tk-sidebar-padding: var(--tk-base-spacing-4);
-  
+
 }

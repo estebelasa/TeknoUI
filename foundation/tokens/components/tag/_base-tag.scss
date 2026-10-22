@@ -13,7 +13,7 @@
        ============================================ */
 
     --tk-tag-font-weight:
-        var(--tk-base-font-weight-medium);
+        var(--tk-font-weight-medium);
 
 
     /* ============================================
@@ -21,7 +21,7 @@
        ============================================ */
 
     --tk-tag-small-font-size:
-        var(--tk-base-font-size-xs);
+        var(--tk-font-size-100);
 
     --tk-tag-small-padding-x:
         var(--tk-base-spacing-2);
@@ -35,7 +35,7 @@
        ============================================ */
 
     --tk-tag-medium-font-size:
-        var(--tk-base-font-size-sm);
+        var(--tk-font-size-200);
 
     --tk-tag-medium-padding-x:
         var(--tk-base-spacing-3);
@@ -49,7 +49,7 @@
        ============================================ */
 
     --tk-tag-large-font-size:
-        var(--tk-base-font-size-md);
+        var(--tk-font-size-300);
 
     --tk-tag-large-padding-x:
         var(--tk-base-spacing-4);
