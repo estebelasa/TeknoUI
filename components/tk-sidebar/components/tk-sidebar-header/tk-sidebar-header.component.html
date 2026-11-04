@@ -21,9 +21,11 @@
 
     <button
         type="button"
+        [attr.aria-label]="toggleLabel()"
+        [attr.aria-expanded]="!collapsed()"
         (click)="collapse.emit()">
 
-        ☰
+        <span aria-hidden="true">☰</span>
 
     </button>
 

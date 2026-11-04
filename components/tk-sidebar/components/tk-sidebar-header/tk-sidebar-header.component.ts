@@ -20,6 +20,9 @@ export class TkSidebarHeaderComponent {
 
     readonly collapsed = input(false);
 
+    /** Accessible name of the toggle button; its state is exposed through aria-expanded. */
+    readonly toggleLabel = input('Mostrar u ocultar el menú');
+
     readonly collapse = output<void>();
 
 }

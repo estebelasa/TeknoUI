@@ -1,19 +1,132 @@
+import {
+    ComponentFixture,
+    TestBed
+} from '@angular/core/testing';
+
+import {
+    TkSidebarItemComponent
+} from './tk-sidebar-item.component';
+
+import {
+    SidebarItem
+} from '../../interfaces';
+
 describe('TkSidebarItemComponent', () => {
 
-    it('should create');
+    const item: SidebarItem = { id: 'experience', label: 'Experiencia' };
 
-    it('should render label');
+    let fixture: ComponentFixture<TkSidebarItemComponent>;
 
-    it('should render icon');
+    let clicked: SidebarItem[];
 
-    it('should emit clicked event');
+    const link = (): HTMLAnchorElement =>
+        fixture.nativeElement.querySelector('a.tk-sidebar-item');
 
-    it('should apply selected class');
+    const render = async (inputs: Record<string, unknown> = {}) => {
 
-    it('should apply disabled class');
+        for (const [name, value] of Object.entries({ item, ...inputs })) {
+            fixture.componentRef.setInput(name, value);
+        }
 
-    it('should hide label when collapsed');
+        await fixture.whenStable();
 
-    it('should remain clickable when enabled');
+    };
+
+    beforeEach(async () => {
+
+        await TestBed.configureTestingModule({
+            imports: [
+                TkSidebarItemComponent
+            ]
+        }).compileComponents();
+
+        fixture = TestBed.createComponent(TkSidebarItemComponent);
+
+        clicked = [];
+
+        fixture.componentInstance.clicked.subscribe(value => clicked.push(value));
+
+    });
+
+
+    it('should render label and link to the section', async () => {
+
+        await render();
+
+        expect(link().textContent?.trim()).toBe('Experiencia');
+
+        expect(link().getAttribute('href')).toBe('#experience');
+
+    });
+
+
+    it('should emit clicked event', async () => {
+
+        await render();
+
+        link().click();
+
+        expect(clicked).toEqual([item]);
+
+    });
+
+
+    it('should mark the selected item as the current location', async () => {
+
+        await render({ selected: true });
+
+        expect(link().classList).toContain('tk-sidebar-item--selected');
+
+        expect(link().getAttribute('aria-current')).toBe('location');
+
+    });
+
+
+    it('should not mark unselected items as current', async () => {
+
+        await render();
+
+        expect(link().hasAttribute('aria-current')).toBe(false);
+
+    });
+
+
+    it('should expose disabled items as disabled and not emit', async () => {
+
+        await render({ item: { ...item, disabled: true } });
+
+        expect(link().classList).toContain('tk-sidebar-item--disabled');
+
+        expect(link().getAttribute('aria-disabled')).toBe('true');
+
+        expect(link().hasAttribute('href')).toBe(false);
+
+        link().click();
+
+        expect(clicked).toEqual([]);
+
+    });
+
+
+    it('should keep an accessible name when collapsed', async () => {
+
+        await render({ collapsed: true });
+
+        expect(link().querySelector('.tk-sidebar-item__label')).toBeNull();
+
+        expect(link().getAttribute('aria-label')).toBe('Experiencia');
+
+        expect(link().getAttribute('title')).toBe('Experiencia');
+
+    });
+
+
+    it('should hide the icon from assistive technology', async () => {
+
+        await render({ item: { ...item, icon: 'work' } });
+
+        expect(link().querySelector('.material-symbols-outlined')?.getAttribute('aria-hidden')).toBe('true');
+
+    });
 
 });

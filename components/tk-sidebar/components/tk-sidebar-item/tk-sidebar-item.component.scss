@@ -30,6 +30,12 @@
     text-underline-offset: 6px;
 }
 
+.tk-sidebar-item:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: var(--tk-sidebar-item-radius);
+}
+
 .tk-sidebar-item__label {
     display: inline;
     min-width: 0;

@@ -17,7 +17,9 @@
     }
 
     &__name {
-        font-weight: 600;
+        margin: var(--tk-space-md) 0;
+        font-size: var(--tk-font-size-400);
+        font-weight: var(--tk-font-weight-bold);
     }
 
     &__subtitle {

@@ -1,12 +1,14 @@
 <section class="tk-sidebar-profile">
 
+    <!-- The avatar is decorative while the name is visible next to it. -->
     <img
         [src]="profile().avatar"
-        [alt]="profile().name">
+        [alt]="collapsed() ? profile().name : ''">
 
     @if (!collapsed()) {
 
-        <h3>{{ profile().name }}</h3>
+        <!-- Not a heading: a reusable component must not break the page outline. -->
+        <p class="tk-sidebar-profile__name">{{ profile().name }}</p>
 
         <p>{{ profile().subtitle }}</p>
 
