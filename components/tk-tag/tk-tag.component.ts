@@ -1,5 +1,4 @@
 import {
-    CUSTOM_ELEMENTS_SCHEMA,
     ChangeDetectionStrategy,
     Component,
     input
@@ -25,7 +24,6 @@ import {
 
     changeDetection: ChangeDetectionStrategy.OnPush,
 
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TkTagComponent {
 

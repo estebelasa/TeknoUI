@@ -6,6 +6,5 @@ export * from './constants';
 
 export * from './types';
 
-export * from './state';
-
-export * from './components';
+// `state` and `components` are internal architecture (see ARCHITECTURE.md)
+// and are intentionally not exported.

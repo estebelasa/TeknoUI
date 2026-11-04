@@ -1,5 +1,4 @@
 import {
-    CUSTOM_ELEMENTS_SCHEMA,
     ChangeDetectionStrategy,
     Component,
     computed,
@@ -50,7 +49,6 @@ import { TkSidebarFooterComponent, TkSidebarHeaderComponent, TkSidebarNavigation
         SidebarSelectors
     ],
 
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
     host: {
         '[style.width.px]': 'width()'

@@ -1,8 +1,6 @@
 import {
-    CUSTOM_ELEMENTS_SCHEMA,
     ChangeDetectionStrategy,
     Component,
-    computed,
     input
 } from '@angular/core';
 
@@ -26,7 +24,6 @@ import {
 
     changeDetection: ChangeDetectionStrategy.OnPush,
     
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TkCardComponent {
 
