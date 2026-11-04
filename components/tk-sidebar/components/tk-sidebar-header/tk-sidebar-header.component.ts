@@ -1,8 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    input,
-    output
+    input
 } from '@angular/core';
 
 @Component({
@@ -19,10 +18,5 @@ export class TkSidebarHeaderComponent {
     readonly title = input('');
 
     readonly collapsed = input(false);
-
-    /** Accessible name of the toggle button; its state is exposed through aria-expanded. */
-    readonly toggleLabel = input('Mostrar u ocultar el menú');
-
-    readonly collapse = output<void>();
 
 }

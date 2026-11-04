@@ -48,7 +48,7 @@ describe('TkSidebarProfileComponent', () => {
     });
 
 
-    it('should treat the avatar as decorative while the name is visible', () => {
+    it('should treat the avatar as decorative', () => {
 
         const avatar = element.querySelector('img')!;
 
@@ -59,17 +59,22 @@ describe('TkSidebarProfileComponent', () => {
     });
 
 
-    it('should hide information but keep a described avatar when collapsed', async () => {
+    it('should keep the content in place but hidden from assistive technology when collapsed', async () => {
+
+        const content = () => element.querySelector('.tk-sidebar-profile__content')!;
+
+        expect(content().hasAttribute('aria-hidden')).toBe(false);
 
         fixture.componentRef.setInput('collapsed', true);
 
         await fixture.whenStable();
 
-        expect(element.querySelector('.tk-sidebar-profile__name')).toBeNull();
+        // Still rendered, so the block keeps its height; the CSS makes it invisible.
+        expect(content().querySelector('.tk-sidebar-profile__name')?.textContent).toBe('Ada Lovelace');
 
-        expect(element.textContent).not.toContain('Engineer');
+        expect(content().getAttribute('aria-hidden')).toBe('true');
 
-        expect(element.querySelector('img')?.getAttribute('alt')).toBe('Ada Lovelace');
+        expect(element.querySelector('.tk-sidebar-profile--collapsed')).not.toBeNull();
 
     });
 

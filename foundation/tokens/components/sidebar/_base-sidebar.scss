@@ -9,7 +9,13 @@
     /* Header */
   
     --tk-sidebar-header-padding:var(--tk-base-spacing-8);
-  
+
+    /* Keeps the header band the same height it had when the toggle sat inside it. */
+    --tk-sidebar-header-min-height:101px;
+
+    /* Round collapse toggle sitting on the sidebar's right border. */
+    --tk-sidebar-toggle-size:32px;
+
     --tk-sidebar-avatar-size:120px;
   
     --tk-sidebar-logo-size:48px;

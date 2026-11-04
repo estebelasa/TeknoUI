@@ -1,0 +1,50 @@
+/*
+ * Centred on the sidebar's 1px right border (which lies just outside the
+ * container box) and vertically centred on its container. Half of it sits
+ * over the page content, so it is raised above it.
+ */
+:host {
+    position: absolute;
+    top: 50%;
+    right: calc(var(--tk-sidebar-toggle-size) / -2 - 0.5px);
+    z-index: 10;
+    transform: translateY(-50%);
+    line-height: 0;
+}
+
+/* No border (as requested); the shadow defines it against both surfaces. */
+.tk-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--tk-sidebar-toggle-size);
+    height: var(--tk-sidebar-toggle-size);
+    padding: 0;
+    border: 0;
+    border-radius: var(--tk-base-radius-full);
+    background: var(--tk-surface-raised);
+    box-shadow: var(--tk-shadow-md);
+    color: var(--tk-text-accent);
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.tk-sidebar-toggle svg {
+    width: 18px;
+    height: 18px;
+    transition: transform .2s ease;
+}
+
+.tk-sidebar-toggle--collapsed svg {
+    transform: rotate(180deg);
+}
+
+.tk-sidebar-toggle:hover {
+    background: var(--tk-color-primary);
+    color: var(--tk-navigation-active-text);
+}
+
+.tk-sidebar-toggle:focus-visible {
+    outline: 2px solid var(--tk-text-primary);
+    outline-offset: 2px;
+}

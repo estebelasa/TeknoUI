@@ -54,11 +54,14 @@
     background-color:
         var(--tk-card-elevated-background);
 
+    backdrop-filter:
+        blur(var(--tk-card-elevated-blur));
+
     box-shadow:
         var(--tk-card-elevated-shadow);
 
     border-color:
-        transparent;
+        var(--tk-card-elevated-border-color);
 
 }
 

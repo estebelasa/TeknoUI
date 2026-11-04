@@ -1,0 +1,15 @@
+<button
+    type="button"
+    class="tk-sidebar-toggle"
+    [class.tk-sidebar-toggle--collapsed]="collapsed()"
+    [attr.aria-label]="label()"
+    [attr.aria-expanded]="!collapsed()"
+    (click)="toggled.emit()">
+
+    <!-- Points left (collapse) while expanded; CSS rotates it to point right. -->
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M15 5L8 12L15 19" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+</button>

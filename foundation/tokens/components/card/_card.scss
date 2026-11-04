@@ -30,8 +30,16 @@
        ============================================ */
 
     --tk-card-elevated-background:
-        var(--tk-surface);
+        var(--tk-surface-glass);
 
+    --tk-card-elevated-blur:
+        var(--tk-surface-glass-blur);
+
+    /* Hairline edge: barely visible on light, separates the card on dark. */
+    --tk-card-elevated-border-color:
+        var(--tk-border-raised);
+
+    /* Dark shadow on light, inverse light glow on dark (see themes). */
     --tk-card-elevated-shadow:
         var(--tk-shadow-md);
 

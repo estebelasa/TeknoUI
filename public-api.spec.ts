@@ -31,7 +31,8 @@ describe('TeknoUI public API', () => {
             'TkSidebarProfileComponent',
             'TkSidebarNavigationComponent',
             'TkSidebarItemComponent',
-            'TkSidebarFooterComponent'
+            'TkSidebarFooterComponent',
+            'TkSidebarToggleComponent'
         ];
 
         expect(exported.filter(name => internals.includes(name))).toEqual([]);

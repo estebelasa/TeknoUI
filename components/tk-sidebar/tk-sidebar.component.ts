@@ -23,7 +23,7 @@ import {
     SidebarState
 } from './state';
 
-import { TkSidebarFooterComponent, TkSidebarHeaderComponent, TkSidebarNavigationComponent, TkSidebarProfileComponent } from './components';
+import { TkSidebarFooterComponent, TkSidebarHeaderComponent, TkSidebarNavigationComponent, TkSidebarProfileComponent, TkSidebarToggleComponent } from './components';
 
 
 
@@ -34,6 +34,7 @@ import { TkSidebarFooterComponent, TkSidebarHeaderComponent, TkSidebarNavigation
     imports: [
         TkSidebarHeaderComponent,
         TkSidebarProfileComponent,
+        TkSidebarToggleComponent,
         TkSidebarNavigationComponent,
         TkSidebarFooterComponent
     ],

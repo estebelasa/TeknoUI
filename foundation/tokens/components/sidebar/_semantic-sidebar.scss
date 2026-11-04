@@ -1,7 +1,12 @@
 :root {
 
     /* Container */
-  
+
+    /* One alignment for header, profile, items and footer: center | start | end.
+       The same keywords are valid for justify-content, align-items and text-align. */
+    --tk-sidebar-align:
+        center;
+
     --tk-sidebar-transition:
         var(--tk-transition-default);
 
@@ -51,8 +56,9 @@
     --tk-sidebar-item-active-background:
         var(--tk-navigation-active);
 
+    /* The current section is the one place where the navigation uses the brand accent. */
     --tk-sidebar-item-active-color:
-        var(--tk-sidebar-item-color);
+        var(--tk-text-accent);
   
     /* Footer */
   

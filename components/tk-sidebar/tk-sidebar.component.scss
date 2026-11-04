@@ -6,8 +6,17 @@
     display:flex;
     flex-direction:column;
     height:100vh;
-    overflow:hidden;
-    background-color: var(--tk-background);
+    /* Visible so the collapse toggle can straddle the right border; each inner
+       region (navigation, profile, labels) clips its own overflow. */
+    overflow:visible;
+    background-color: var(--tk-sidebar-background);
+    border-right: 1px solid var(--tk-sidebar-border);
+}
+
+/* Positioning context for the collapse toggle (centred on this row's right edge). */
+.tk-sidebar__toggle-row{
+    position:relative;
+    flex-shrink:0;
 }
 
 .tk-sidebar__header{

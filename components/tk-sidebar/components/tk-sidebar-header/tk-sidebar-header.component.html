@@ -9,7 +9,12 @@
 
     }
 
-    @if (!collapsed()) {
+    <!-- Brand mark provided by the application, visible in both states. -->
+    <div class="tk-sidebar-header__brand">
+        <ng-content />
+    </div>
+
+    @if (!collapsed() && title()) {
 
         <span class="tk-sidebar-header__title">
 
@@ -18,15 +23,5 @@
         </span>
 
     }
-
-    <button
-        type="button"
-        [attr.aria-label]="toggleLabel()"
-        [attr.aria-expanded]="!collapsed()"
-        (click)="collapse.emit()">
-
-        <span aria-hidden="true">☰</span>
-
-    </button>
 
 </header>

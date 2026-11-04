@@ -1,47 +1,71 @@
+/*
+ * Light theme — "Paper".
+ * Ink-black text on an off-white page, white raised surfaces and the
+ * brand green used as an accent (never as body text).
+ * Every text/background pair below is >= 4.5:1 (WCAG AA).
+ */
 :root,
 html[data-theme='light'] {
   color-scheme: light;
 
+  /* Brand green: fills, focus and hover states */
   --tk-color-primary: var(--tk-base-ghost-green-600);
   --tk-color-primary-hover: var(--tk-base-ghost-green-700);
   --tk-color-primary-active: var(--tk-base-ghost-green-800);
   --tk-color-primary-subtle: var(--tk-base-ghost-green-100);
 
-  --tk-background: var(--tk-base-white);
-  --tk-background-secondary: var(--tk-base-white);
+  /* Surfaces: page < surface < raised */
+  --tk-background: var(--tk-base-zero-black-50);
+  --tk-background-secondary: var(--tk-base-zero-black-100);
   --tk-surface: var(--tk-base-white);
-  --tk-surface-secondary: var(--tk-base-ghost-green-50);
-  --tk-surface-tertiary: var(--tk-base-zero-black-100);
+  --tk-surface-raised: var(--tk-base-white);
+  /* Frosted raised surface: lets the background (watermark) show through, blurred. */
+  --tk-surface-glass: rgb(255 255 255 / 0.75);
+  --tk-surface-glass-blur: 10px;
+  --tk-surface-secondary: var(--tk-base-zero-black-100);
+  --tk-surface-tertiary: var(--tk-base-zero-black-200);
 
-  --tk-text-primary: var(--tk-base-zero-black-950);
-  --tk-text-secondary: var(--tk-base-zero-black-950);
-  --tk-text-tertiary: var(--tk-base-zero-black-950);
+  /* Text hierarchy */
+  --tk-text-primary: var(--tk-base-zero-black-950);   /* 18.7:1 on page */
+  --tk-text-secondary: var(--tk-base-zero-black-600); /* 10.6:1 */
+  --tk-text-tertiary: var(--tk-base-zero-black-500);  /*  7.2:1 */
   --tk-text-disabled: var(--tk-base-zero-black-400);
-  --tk-text-inverse: var(--tk-base-zero-black-950);
+  --tk-text-inverse: var(--tk-base-zero-black-950);   /* text on green fills: 10.7:1 */
+  /* Brand green for TEXT: 600 is only 1.9:1 here, 800 is 4.8-5.8:1 on every light surface. */
+  --tk-text-accent: var(--tk-base-ghost-green-800);
 
+  /* Borders: neutral by default, green only for focus */
   --tk-border: var(--tk-base-zero-black-200);
   --tk-border-subtle: var(--tk-base-zero-black-100);
-  --tk-border-strong: var(--tk-base-ghost-green-600);
-  --tk-border-focus: var(--tk-base-ghost-green-500);
+  --tk-border-strong: var(--tk-base-zero-black-300);
+  --tk-border-focus: var(--tk-base-ghost-green-700);
+  --tk-border-raised: rgb(5 7 6 / 0.06);
 
-  --tk-state-hover: var(--tk-base-ghost-green-100);
-  --tk-state-active: var(--tk-base-ghost-green-200);
+  /* Interaction states */
+  --tk-state-hover: var(--tk-base-zero-black-100);
+  --tk-state-active: var(--tk-base-zero-black-200);
   --tk-state-selected: var(--tk-base-ghost-green-100);
   --tk-state-disabled: var(--tk-base-zero-black-100);
 
+  /* Navigation */
   --tk-navigation-background: var(--tk-base-white);
   --tk-navigation-hover: var(--tk-base-zero-black-100);
   --tk-navigation-active: var(--tk-base-ghost-green-500);
   --tk-navigation-active-text: var(--tk-base-zero-black-950);
 
-  --tk-status-success: var(--tk-base-ghost-green-700);
+  /* Status */
+  --tk-status-success: var(--tk-base-ghost-green-800);
   --tk-status-success-subtle: var(--tk-base-ghost-green-100);
-  --tk-status-warning: #a16207;
+  --tk-status-warning: #92400e;
   --tk-status-warning-subtle: #fef3c7;
   --tk-status-danger: #b91c1c;
   --tk-status-danger-subtle: #fee2e2;
 
-  --tk-shadow-sm: 0 1px 2px rgb(5 7 6 / 0.08);
-  --tk-shadow-md: 0 8px 24px rgb(5 7 6 / 0.14);
-  --tk-shadow-lg: 0 16px 40px rgb(5 7 6 / 0.18);
+  /* Elevation: soft, layered dark shadows */
+  --tk-shadow-sm: 0 1px 2px rgb(5 7 6 / 0.06);
+  --tk-shadow-md: 0 1px 2px rgb(5 7 6 / 0.05), 0 12px 32px -12px rgb(5 7 6 / 0.16);
+  --tk-shadow-lg: 0 2px 4px rgb(5 7 6 / 0.06), 0 24px 48px -16px rgb(5 7 6 / 0.22);
+
+  /* Decorative brand watermark behind the content */
+  --tk-watermark-opacity: 0.07; /* worst text pair over it: 4.60:1 */
 }

@@ -1,17 +1,29 @@
 <aside class="tk-sidebar">
 
+    <!-- Header: the brand mark provided by the application, in both states. -->
     <tk-sidebar-header
         [title]="''"
-        [collapsed]="selectors.isCollapsed()"
-        (collapse)="actions.toggle()">
+        [collapsed]="selectors.isCollapsed()">
+        <ng-content select="[tkSidebarBrand]" />
     </tk-sidebar-header>
 
-    @if (profile()) {
-        <tk-sidebar-profile
-            [profile]="profile()!"
-            [collapsed]="selectors.isCollapsed()">
-        </tk-sidebar-profile>
-    }
+    <!-- Profile row: same block, borders and height in both states (its content
+         is hidden when collapsed); the collapse toggle sits on its right border. -->
+    <div class="tk-sidebar__toggle-row">
+
+        @if (profile()) {
+            <tk-sidebar-profile
+                [profile]="profile()!"
+                [collapsed]="selectors.isCollapsed()">
+            </tk-sidebar-profile>
+        }
+
+        <tk-sidebar-toggle
+            [collapsed]="selectors.isCollapsed()"
+            (toggled)="actions.toggle()">
+        </tk-sidebar-toggle>
+
+    </div>
 
     <tk-sidebar-navigation
         [items]="items()"

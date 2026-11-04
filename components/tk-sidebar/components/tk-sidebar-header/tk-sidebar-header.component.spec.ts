@@ -1,4 +1,8 @@
 import {
+    Component
+} from '@angular/core';
+
+import {
     ComponentFixture,
     TestBed
 } from '@angular/core/testing';
@@ -12,9 +16,6 @@ describe('TkSidebarHeaderComponent', () => {
     let fixture: ComponentFixture<TkSidebarHeaderComponent>;
 
     let element: HTMLElement;
-
-    const button = (): HTMLButtonElement =>
-        element.querySelector('button')!;
 
     beforeEach(async () => {
 
@@ -49,28 +50,6 @@ describe('TkSidebarHeaderComponent', () => {
     });
 
 
-    it('should give the toggle button an accessible name and hide the glyph', () => {
-
-        expect(button().getAttribute('aria-label')).toBe('Mostrar u ocultar el menú');
-
-        expect(button().querySelector('[aria-hidden="true"]')?.textContent?.trim()).toBe('☰');
-
-    });
-
-
-    it('should expose the expanded state through aria-expanded', async () => {
-
-        expect(button().getAttribute('aria-expanded')).toBe('true');
-
-        fixture.componentRef.setInput('collapsed', true);
-
-        await fixture.whenStable();
-
-        expect(button().getAttribute('aria-expanded')).toBe('false');
-
-    });
-
-
     it('should hide title when collapsed', async () => {
 
         fixture.componentRef.setInput('collapsed', true);
@@ -82,15 +61,37 @@ describe('TkSidebarHeaderComponent', () => {
     });
 
 
-    it('should emit collapse event', () => {
+    it('should not render an empty title', async () => {
 
-        let emitted = 0;
+        fixture.componentRef.setInput('title', '');
 
-        fixture.componentInstance.collapse.subscribe(() => emitted++);
+        await fixture.whenStable();
 
-        button().click();
+        expect(element.querySelector('.tk-sidebar-header__title')).toBeNull();
 
-        expect(emitted).toBe(1);
+    });
+
+
+    it('should not contain the collapse toggle any more', () => {
+
+        expect(element.querySelector('button')).toBeNull();
+
+    });
+
+
+    it('should project a brand mark', async () => {
+
+        @Component({
+            imports: [TkSidebarHeaderComponent],
+            template: `<tk-sidebar-header><b class="brand">AL</b></tk-sidebar-header>`
+        })
+        class HostComponent {}
+
+        const host = TestBed.createComponent(HostComponent);
+
+        await host.whenStable();
+
+        expect(host.nativeElement.querySelector('.tk-sidebar-header__brand .brand')?.textContent).toBe('AL');
 
     });
 

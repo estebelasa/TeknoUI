@@ -6,10 +6,11 @@
 .tk-sidebar-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: var(--tk-sidebar-align);
+    gap: var(--tk-space-sm);
 
     width: 100%;
-    min-height: 64px;
+    min-height: var(--tk-sidebar-header-min-height);
 
     padding: var(--tk-sidebar-header-padding);
 
@@ -20,7 +21,16 @@
     &__brand {
         display: flex;
         align-items: center;
-        gap: var(--tk-space-sm);
+        justify-content: center;
+    }
+
+    &__brand:empty {
+        display: none;
+    }
+
+    /* Collapsed (80px): the brand may use the full width instead of the side padding. */
+    &__brand > * {
+        flex-shrink: 0;
     }
 
     &__logo {
@@ -34,36 +44,4 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-
-    &__actions {
-        display: flex;
-        align-items: center;
-    }
-}
-
-.tk-sidebar-header button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    border: 1px solid var(--tk-color-primary);
-    border-radius: var(--tk-border-radius-medium);
-    background: transparent;
-    color: var(--tk-color-primary);
-    cursor: pointer;
-    font: inherit;
-    font-size: 1.25rem;
-    transition: background-color .2s ease, color .2s ease;
-}
-
-.tk-sidebar-header button:hover {
-    background: var(--tk-color-primary);
-    color: var(--tk-navigation-active-text);
-}
-
-.tk-sidebar-header button:focus-visible {
-    outline: 2px solid var(--tk-text-primary);
-    outline-offset: 2px;
 }
