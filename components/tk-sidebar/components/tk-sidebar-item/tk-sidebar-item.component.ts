@@ -6,10 +6,12 @@ import {
 } from '@angular/core';
 
 import { SidebarItem } from '../../interfaces';
+import { TkIconComponent } from '../../../tk-icon';
 
 @Component({
     selector: 'tk-sidebar-item',
     standalone: true,
+    imports: [TkIconComponent],
     templateUrl: './tk-sidebar-item.component.html',
     styleUrl: './tk-sidebar-item.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

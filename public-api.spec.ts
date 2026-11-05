@@ -14,6 +14,8 @@ describe('TeknoUI public API', () => {
             'DEFAULT_CARD_CONFIG',
             'TkTagComponent',
             'DEFAULT_TAG_CONFIG',
+            'TkIconComponent',
+            'TK_ICONS',
             'TkSidebarComponent',
             'DEFAULT_SIDEBAR_CONFIG'
         ]));

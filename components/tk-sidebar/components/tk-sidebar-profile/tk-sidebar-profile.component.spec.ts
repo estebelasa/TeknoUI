@@ -1,4 +1,8 @@
 import {
+    Component
+} from '@angular/core';
+
+import {
     ComponentFixture,
     TestBed
 } from '@angular/core/testing';
@@ -55,6 +59,34 @@ describe('TkSidebarProfileComponent', () => {
         expect(avatar.getAttribute('src')).toBe('ada.jpg');
 
         expect(avatar.getAttribute('alt')).toBe('');
+
+    });
+
+
+    it('should not render an image when there is no avatar', async () => {
+
+        fixture.componentRef.setInput('profile', { name: 'Ada Lovelace', subtitle: 'Engineer' });
+
+        await fixture.whenStable();
+
+        expect(element.querySelector('img')).toBeNull();
+
+    });
+
+
+    it('should project a brand into the same block', async () => {
+
+        @Component({
+            imports: [TkSidebarProfileComponent],
+            template: `<tk-sidebar-profile [profile]="{ name: 'Ada' }" [collapsed]="true"><b class="brand">AL</b></tk-sidebar-profile>`
+        })
+        class HostComponent {}
+
+        const host = TestBed.createComponent(HostComponent);
+
+        await host.whenStable();
+
+        expect(host.nativeElement.querySelector('.tk-sidebar-profile__brand .brand')?.textContent).toBe('AL');
 
     });
 

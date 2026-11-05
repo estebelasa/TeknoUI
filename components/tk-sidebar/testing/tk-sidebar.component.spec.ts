@@ -29,7 +29,8 @@ import {
             [profile]="{ name: 'Ada Lovelace', subtitle: 'Engineer' }"
             [footer]="{ version: 'v1.0.0' }"
             (itemSelected)="selected.push($event)">
-            <span tkSidebarBrand class="test-brand">AL</span>
+            <span tkSidebarBrand class="header-brand">AL</span>
+            <span tkSidebarProfileBrand class="profile-brand">al</span>
         </tk-sidebar>
     `
 })
@@ -114,17 +115,15 @@ describe('TkSidebarComponent', () => {
     });
 
 
-    it('should show the projected brand in the header in both states', async () => {
+    it('should project each brand slot into its own block', () => {
 
-        const brand = () => element.querySelector('.tk-sidebar-header__brand .test-brand');
+        expect(element.querySelector('.tk-sidebar-header__brand .header-brand')?.textContent).toBe('AL');
 
-        expect(brand()?.textContent).toBe('AL');
+        expect(element.querySelector('.tk-sidebar-profile__brand .profile-brand')?.textContent).toBe('al');
 
-        await toggle();
+        expect(element.querySelector('tk-sidebar-header .profile-brand')).toBeNull();
 
-        expect(brand()?.textContent).toBe('AL');
-
-        expect(element.querySelector('tk-sidebar-profile .test-brand')).toBeNull();
+        expect(element.querySelector('tk-sidebar-profile .header-brand')).toBeNull();
 
     });
 

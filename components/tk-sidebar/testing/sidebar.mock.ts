@@ -8,7 +8,7 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
 
         label:'Sobre mí',
 
-        icon:'person'
+        icon:'user'
 
     },
 
@@ -18,7 +18,7 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
 
         label:'Experiencia',
 
-        icon:'work'
+        icon:'briefcase'
 
     },
 

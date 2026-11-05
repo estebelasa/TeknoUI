@@ -2,11 +2,24 @@
     display: block;
 }
 
+/*
+ * Content and brand share one grid cell, so the block has the same height
+ * (and borders/padding) whatever is shown in it.
+ */
 .tk-sidebar-profile {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
 
     padding: var(--tk-space-lg);
 
     border-bottom: 1px solid var(--tk-sidebar-border);
+
+    &__content,
+    &__brand {
+        grid-area: 1 / 1;
+    }
 
     &__content {
         display: flex;
@@ -14,6 +27,23 @@
         align-items: var(--tk-sidebar-align);
         text-align: var(--tk-sidebar-align);
         min-width: 0;
+    }
+
+    /* Full block width (ignores the side padding) so an 80px collapsed sidebar
+       does not shrink the brand. */
+    &__brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-inline: calc(var(--tk-space-lg) * -1);
+    }
+
+    &__brand:empty {
+        display: none;
+    }
+
+    &__brand > * {
+        flex-shrink: 0;
     }
 
     &__name {

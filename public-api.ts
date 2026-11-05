@@ -5,4 +5,5 @@
  */
 export * from './components/tk-card';
 export * from './components/tk-tag';
+export * from './components/tk-icon';
 export * from './components/tk-sidebar';

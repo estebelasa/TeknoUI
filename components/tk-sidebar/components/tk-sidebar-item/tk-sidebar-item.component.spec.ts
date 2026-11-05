@@ -121,11 +121,30 @@ describe('TkSidebarItemComponent', () => {
     });
 
 
-    it('should hide the icon from assistive technology', async () => {
+    it('should show only the label while expanded', async () => {
 
-        await render({ item: { ...item, icon: 'work' } });
+        await render({ item: { ...item, icon: 'briefcase' } });
 
-        expect(link().querySelector('.material-symbols-outlined')?.getAttribute('aria-hidden')).toBe('true');
+        expect(link().querySelector('tk-icon')).toBeNull();
+
+        expect(link().querySelector('.tk-sidebar-item__label')?.textContent?.trim()).toBe('Experiencia');
+
+    });
+
+
+    it('should show only a decorative icon while collapsed', async () => {
+
+        await render({ item: { ...item, icon: 'briefcase' }, collapsed: true });
+
+        const icon = link().querySelector('tk-icon');
+
+        expect(icon).not.toBeNull();
+
+        expect(icon?.getAttribute('aria-hidden')).toBe('true');
+
+        expect(link().querySelector('.tk-sidebar-item__label')).toBeNull();
+
+        expect(link().getAttribute('aria-label')).toBe('Experiencia');
 
     });
 

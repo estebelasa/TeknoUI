@@ -6,14 +6,21 @@
          (the collapse toggle sits on it) and the navigation does not jump. -->
     <div class="tk-sidebar-profile__content" [attr.aria-hidden]="collapsed() ? 'true' : null">
 
-        <!-- Decorative: the name is right below it. -->
-        <img [src]="profile().avatar" alt="">
+        @if (profile().avatar) {
+            <!-- Decorative: the name is right below it. -->
+            <img class="tk-sidebar-profile__avatar" [src]="profile().avatar" alt="">
+        }
 
         <!-- Not a heading: a reusable component must not break the page outline. -->
         <p class="tk-sidebar-profile__name">{{ profile().name }}</p>
 
         <p class="tk-sidebar-profile__subtitle">{{ profile().subtitle }}</p>
 
+    </div>
+
+    <!-- Optional brand projected by the application, in the same place (e.g. when collapsed). -->
+    <div class="tk-sidebar-profile__brand">
+        <ng-content />
     </div>
 
 </section>

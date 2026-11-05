@@ -1,10 +1,13 @@
+import { TkIconName } from '../../tk-icon';
+
 export interface SidebarItem {
 
     id: string;
-  
+
     label: string;
-  
-    icon?: string;
+
+    /** Shown when the sidebar is collapsed (the label is shown when expanded). */
+    icon?: TkIconName;
   
     route?: string;
   

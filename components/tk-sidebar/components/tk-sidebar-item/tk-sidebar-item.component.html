@@ -10,10 +10,9 @@
     [attr.title]="collapsed() ? item().label : null"
     (click)="onClick($event)">
 
-    @if (item().icon) {
-        <span class="material-symbols-outlined" aria-hidden="true">
-            {{ item().icon }}
-        </span>
+    <!-- Collapsed: icon only (the link keeps its name through aria-label/title). -->
+    @if (collapsed() && item().icon) {
+        <tk-icon class="tk-sidebar-item__icon" [name]="item().icon!" />
     }
 
     @if (!collapsed()) {
