@@ -16,6 +16,11 @@
     /* Round collapse toggle sitting on the sidebar's right border. */
     --tk-sidebar-toggle-size:32px;
 
+    /* Mobile overlay drawer */
+    --tk-sidebar-drawer-max-width:85vw;
+    --tk-sidebar-drawer-z-index:100;
+    --tk-sidebar-backdrop:rgba(0,0,0,.45);
+
     --tk-sidebar-avatar-size:120px;
   
     --tk-sidebar-logo-size:48px;

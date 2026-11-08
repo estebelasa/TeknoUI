@@ -8,7 +8,8 @@ export const TK_ICONS = {
     briefcase: 'M5 7H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z M9 7V5H15V7 M3 13H21',
     code: 'M8 7L3 12L8 17 M16 7L21 12L16 17',
     folder: 'M3 7a2 2 0 0 1 2-2H9L11 7H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z',
-    mail: 'M5 5H19a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z M3 7L12 13L21 7'
+    mail: 'M5 5H19a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z M3 7L12 13L21 7',
+    menu: 'M4 7H20 M4 12H20 M4 17H20'
 } as const;
 
 export type TkIconName = keyof typeof TK_ICONS;
