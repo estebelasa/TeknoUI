@@ -8,6 +8,12 @@
 
     display: block;
 
+    /* Fill the host: in a grid or flex row every card of the row gets the same
+       height. In normal flow the host height is auto, so this changes nothing. */
+    height: 100%;
+
+    box-sizing: border-box;
+
     background-color:
         var(--tk-card-background);
 
