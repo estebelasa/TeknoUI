@@ -31,3 +31,7 @@ projects/teknoui/
 docs/             architecture notes
 scripts/          repository checks used locally and in CI
 ```
+
+## License
+
+[MIT](LICENSE) © 2026 Estebe Lasa
