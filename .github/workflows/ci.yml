@@ -1,0 +1,53 @@
+# Continuous integration for the TeknoUI library.
+# Runs on every pull request, every push to main and on demand.
+# Nothing is published or deployed from here (yet).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: CI only needs to read the code.
+permissions:
+  contents: read
+
+# A newer push to the same PR cancels the run still in progress.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  verify:
+    name: Typecheck, tokens, tests y build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NG_CLI_ANALYTICS: 'false'
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Tokens --tk-* definidos
+        run: npm run check:tokens
+
+      - name: Tests
+        run: npx ng test teknoui --watch=false
+
+      - name: Build de la librería
+        run: npx ng build teknoui
+
+      - name: El paquete expone los estilos
+        run: test -f dist/teknoui/foundation/styles/_teknoui.scss

@@ -1,12 +1,28 @@
 {
   "name": "@estebelasa/teknoui",
   "version": "0.0.1",
+  "description": "Angular component library: standalone, zoneless-ready components and design tokens (CSS custom properties) with light/dark themes.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebelasa/TeknoUI.git"
+  },
+  "keywords": [
+    "angular",
+    "component-library",
+    "design-tokens",
+    "ui"
+  ],
   "peerDependencies": {
     "@angular/common": "^22.1.0",
     "@angular/core": "^22.1.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "exports": {
+    "./styles": {
+      "sass": "./foundation/styles/_teknoui.scss"
+    }
   },
   "sideEffects": false
 }

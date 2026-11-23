@@ -3,5 +3,12 @@
   "dest": "../../dist/teknoui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    {
+      "input": "src/foundation",
+      "glob": "**/*.scss",
+      "output": "foundation"
+    }
+  ]
 }

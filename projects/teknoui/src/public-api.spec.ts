@@ -1,4 +1,4 @@
-import * as teknoui from 'teknoui';
+import * as teknoui from '@estebelasa/teknoui';
 
 describe('TeknoUI public API', () => {
 
