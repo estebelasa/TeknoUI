@@ -1,0 +1,51 @@
+<aside class="tk-sidebar" [id]="panelId">
+
+    <!-- Header: the brand mark provided by the application, in both states. -->
+    <tk-sidebar-header
+        [title]="''"
+        [collapsed]="collapsed()">
+        <ng-content select="[tkSidebarBrand]" />
+    </tk-sidebar-header>
+
+    <!-- Profile row: same block, borders and height in both states (its content
+         is hidden when collapsed); the collapse toggle sits on its right border. -->
+    <div class="tk-sidebar__toggle-row">
+
+        @if (profile()) {
+            <tk-sidebar-profile
+                [profile]="profile()!"
+                [collapsed]="collapsed()">
+                <!-- Optional brand mark for the profile block (e.g. shown when collapsed). -->
+                <ng-content select="[tkSidebarProfileBrand]" />
+            </tk-sidebar-profile>
+        }
+
+        <!-- Collapsing is a desktop feature; the mobile drawer is closed instead. -->
+        @if (!isMobile()) {
+            <tk-sidebar-toggle
+                [collapsed]="collapsed()"
+                (toggled)="actions.toggle()">
+            </tk-sidebar-toggle>
+        }
+
+    </div>
+
+    <tk-sidebar-navigation
+        [items]="items()"
+        [collapsed]="collapsed()"
+        [selectedItemId]="selectors.selectedItem()"
+        (itemSelected)="onItemClick($event)">
+    </tk-sidebar-navigation>
+
+    @if (footer()) {
+        <tk-sidebar-footer
+            [footer]="footer()!">
+        </tk-sidebar-footer>
+    }
+
+</aside>
+
+<!-- Backdrop of the open drawer: clicking outside closes it (Escape too). -->
+@if (mobileOpened()) {
+    <div class="tk-sidebar__backdrop" aria-hidden="true" (click)="closeMobile()"></div>
+}

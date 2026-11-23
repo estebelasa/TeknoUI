@@ -1,0 +1,107 @@
+:host {
+
+    display: block;
+
+}
+
+.tk-card {
+
+    display: block;
+
+    /* Fill the host: in a grid or flex row every card of the row gets the same
+       height. In normal flow the host height is auto, so this changes nothing. */
+    height: 100%;
+
+    box-sizing: border-box;
+
+    background-color:
+        var(--tk-card-background);
+
+    color:
+        var(--tk-card-color);
+
+    border-radius:
+        var(--tk-card-radius);
+
+    border:
+        1px solid var(--tk-card-border-color);
+
+    transition:
+        var(--tk-card-transition);
+
+}
+
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.tk-card--default {
+
+    background-color:
+        var(--tk-card-background);
+
+}
+
+
+.tk-card--outlined {
+
+    background-color:
+        var(--tk-card-outlined-background);
+
+    border-color:
+        var(--tk-card-outlined-border-color);
+
+}
+
+
+.tk-card--elevated {
+
+    background-color:
+        var(--tk-card-elevated-background);
+
+    backdrop-filter:
+        blur(var(--tk-card-elevated-blur));
+
+    box-shadow:
+        var(--tk-card-elevated-shadow);
+
+    border-color:
+        var(--tk-card-elevated-border-color);
+
+}
+
+
+/* ============================================
+   PADDING
+   ============================================ */
+
+.tk-card--padding-none {
+
+    padding: 0;
+
+}
+
+
+.tk-card--padding-small {
+
+    padding:
+        var(--tk-card-padding-small);
+
+}
+
+
+.tk-card--padding-medium {
+
+    padding:
+        var(--tk-card-padding-medium);
+
+}
+
+
+.tk-card--padding-large {
+
+    padding:
+        var(--tk-card-padding-large);
+
+}

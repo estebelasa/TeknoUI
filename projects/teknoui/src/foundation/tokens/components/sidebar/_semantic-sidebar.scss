@@ -1,0 +1,70 @@
+:root {
+
+    /* Container */
+
+    /* One alignment for header, profile, items and footer: center | start | end.
+       The same keywords are valid for justify-content, align-items and text-align. */
+    --tk-sidebar-align:
+        center;
+
+    --tk-sidebar-transition:
+        var(--tk-transition-default);
+
+    --tk-sidebar-background:
+        var(--tk-navigation-background);
+
+    --tk-sidebar-color:
+        var(--tk-text-primary);
+
+    --tk-sidebar-border:
+        var(--tk-border);
+  
+    --tk-sidebar-shadow:
+        var(--tk-floating-shadow);
+  
+    /* Header */
+  
+    --tk-sidebar-title-size:
+        var(--tk-heading-2-size);
+  
+    --tk-sidebar-title-weight:
+        var(--tk-heading-2-weight);
+  
+    --tk-sidebar-subtitle-size:
+        var(--tk-body-size);
+
+    --tk-sidebar-header-background:
+        var(--tk-sidebar-background);
+
+    /* Navigation */
+
+    --tk-sidebar-item-color:
+        var(--tk-text-primary);
+  
+    --tk-sidebar-item-font-size:
+        var(--tk-body-size);
+  
+    --tk-sidebar-item-font-weight:
+        var(--tk-font-weight-medium);
+  
+    --tk-sidebar-item-radius:
+        var(--tk-border-radius-medium);
+  
+    --tk-sidebar-item-hover-background:
+        var(--tk-navigation-hover);
+
+    --tk-sidebar-item-active-background:
+        var(--tk-navigation-active);
+
+    /* The current section is the one place where the navigation uses the brand accent. */
+    --tk-sidebar-item-active-color:
+        var(--tk-text-accent);
+  
+    /* Footer */
+  
+    --tk-sidebar-footer-color:
+        var(--tk-text-secondary);
+  
+    /* Motion */
+  
+}

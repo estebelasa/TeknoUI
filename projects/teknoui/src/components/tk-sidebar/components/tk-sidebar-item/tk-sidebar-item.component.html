@@ -1,0 +1,24 @@
+<a
+    class="tk-sidebar-item"
+    [class.tk-sidebar-item--selected]="selected()"
+    [class.tk-sidebar-item--collapsed]="collapsed()"
+    [class.tk-sidebar-item--disabled]="item().disabled"
+    [attr.href]="item().disabled ? null : '#' + item().id"
+    [attr.aria-current]="selected() ? 'location' : null"
+    [attr.aria-disabled]="item().disabled ? 'true' : null"
+    [attr.aria-label]="collapsed() ? item().label : null"
+    [attr.title]="collapsed() ? item().label : null"
+    (click)="onClick($event)">
+
+    <!-- Collapsed: icon only (the link keeps its name through aria-label/title). -->
+    @if (collapsed() && item().icon) {
+        <tk-icon class="tk-sidebar-item__icon" [name]="item().icon!" />
+    }
+
+    @if (!collapsed()) {
+        <span class="tk-sidebar-item__label">
+            {{ item().label }}
+        </span>
+    }
+
+</a>

@@ -1,0 +1,47 @@
+:host {
+    display: block;
+    flex-shrink: 0;
+}
+
+.tk-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: var(--tk-sidebar-align);
+    gap: var(--tk-space-sm);
+
+    width: 100%;
+    min-height: var(--tk-sidebar-header-min-height);
+
+    padding: var(--tk-sidebar-header-padding);
+
+    background: var(--tk-sidebar-header-background);
+
+    border-bottom: 1px solid var(--tk-sidebar-border);
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__brand:empty {
+        display: none;
+    }
+
+    /* Collapsed (80px): the brand may use the full width instead of the side padding. */
+    &__brand > * {
+        flex-shrink: 0;
+    }
+
+    &__logo {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+    }
+
+    &__title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

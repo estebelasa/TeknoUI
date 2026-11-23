@@ -1,0 +1,17 @@
+<nav class="tk-sidebar-navigation">
+
+    @for(item of items(); track item.id){
+
+        <tk-sidebar-item
+
+            [item]="item"
+
+            [collapsed]="collapsed()"
+
+            [selected]="selectedItemId() === item.id"
+
+            (clicked)="itemSelected.emit($event)"/>
+
+    }
+
+</nav>

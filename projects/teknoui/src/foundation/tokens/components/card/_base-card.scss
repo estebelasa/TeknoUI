@@ -1,0 +1,39 @@
+:root {
+
+    /* ============================================
+       BORDER RADIUS
+       ============================================ */
+
+    --tk-card-radius:
+        var(--tk-base-radius-lg);
+
+
+    /* ============================================
+       PADDING
+       ============================================ */
+
+    --tk-card-padding-small:
+        var(--tk-base-spacing-3);
+
+    --tk-card-padding-medium:
+        var(--tk-base-spacing-5);
+
+    --tk-card-padding-large:
+        var(--tk-base-spacing-8);
+
+
+    /* ============================================
+       TRANSITION
+       ============================================ */
+
+    --tk-card-transition:
+        background-color var(--tk-base-duration-normal)
+        var(--tk-base-easing-standard),
+
+        border-color var(--tk-base-duration-normal)
+        var(--tk-base-easing-standard),
+
+        box-shadow var(--tk-base-duration-normal)
+        var(--tk-base-easing-standard);
+
+}

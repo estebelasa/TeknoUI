@@ -1,0 +1,77 @@
+:host{
+    display:block;
+}
+
+.tk-sidebar{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    /* Visible so the collapse toggle can straddle the right border; each inner
+       region (navigation, profile, labels) clips its own overflow. */
+    overflow:visible;
+    background-color: var(--tk-sidebar-background);
+    border-right: 1px solid var(--tk-sidebar-border);
+}
+
+/* Positioning context for the collapse toggle (centred on this row's right edge). */
+.tk-sidebar__toggle-row{
+    position:relative;
+    flex-shrink:0;
+}
+
+.tk-sidebar__header{
+
+}
+
+.tk-sidebar__profile{
+
+}
+
+.tk-sidebar__navigation{
+
+    flex:1;
+
+    overflow:auto;
+
+}
+
+.tk-sidebar__footer{
+
+}
+
+.tk-sidebar__item{
+
+    width:100%;
+
+}
+
+/* ---- Mobile: overlay drawer (below the `mobileBreakpoint` input) ---------- */
+
+:host(.tk-sidebar-host--mobile){
+    position:fixed;
+    inset:0 auto 0 0;
+    z-index:var(--tk-sidebar-drawer-z-index);
+    max-width:var(--tk-sidebar-drawer-max-width);
+    transform:translateX(-100%);
+    transition:transform var(--tk-sidebar-transition), visibility 0s linear var(--tk-base-duration-normal);
+    visibility:hidden;
+}
+
+:host(.tk-sidebar-host--mobile.tk-sidebar-host--open){
+    transform:none;
+    transition:transform var(--tk-sidebar-transition);
+    visibility:visible;
+}
+
+:host(.tk-sidebar-host--mobile) .tk-sidebar{
+    height:100dvh;
+    position:relative;
+    z-index:1;
+    box-shadow:var(--tk-sidebar-shadow);
+}
+
+.tk-sidebar__backdrop{
+    position:fixed;
+    inset:0;
+    background:var(--tk-sidebar-backdrop);
+}

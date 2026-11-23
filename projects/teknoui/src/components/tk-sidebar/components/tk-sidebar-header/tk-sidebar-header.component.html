@@ -1,0 +1,27 @@
+<header class="tk-sidebar-header">
+
+    @if (logo()) {
+
+        <img
+            class="tk-sidebar-header__logo"
+            [src]="logo()!"
+            [alt]="title()">
+
+    }
+
+    <!-- Brand mark provided by the application, visible in both states. -->
+    <div class="tk-sidebar-header__brand">
+        <ng-content />
+    </div>
+
+    @if (!collapsed() && title()) {
+
+        <span class="tk-sidebar-header__title">
+
+            {{ title() }}
+
+        </span>
+
+    }
+
+</header>

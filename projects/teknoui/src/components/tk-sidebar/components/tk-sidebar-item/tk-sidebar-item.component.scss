@@ -1,0 +1,83 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.tk-sidebar-item {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    max-width: 100%;
+    gap: var(--tk-space-sm);
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    color: var(--tk-sidebar-item-color);
+    font: inherit;
+    font-size: var(--tk-sidebar-item-font-size);
+    font-weight: var(--tk-sidebar-item-font-weight);
+    line-height: 1.5;
+    text-align: var(--tk-sidebar-align);
+    text-decoration: none;
+    transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.tk-sidebar-item:hover {
+    color: var(--tk-sidebar-item-color);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.tk-sidebar-item:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: var(--tk-sidebar-item-radius);
+}
+
+.tk-sidebar-item__label {
+    display: inline;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tk-sidebar-item--selected {
+    color: var(--tk-sidebar-item-active-color);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.tk-sidebar-item--disabled {
+    cursor: default;
+    opacity: .4;
+    pointer-events: none;
+}
+
+.tk-sidebar-item--collapsed {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--tk-sidebar-item-radius);
+    text-decoration: none;
+}
+
+.tk-sidebar-item--collapsed:hover {
+    background: var(--tk-sidebar-item-hover-background);
+    text-decoration: none;
+}
+
+/* Collapsed there is no underline: the current section also gets a background,
+   so it is not signalled by colour alone (WCAG 1.4.1). */
+.tk-sidebar-item--collapsed.tk-sidebar-item--selected {
+    background: var(--tk-state-selected);
+    text-decoration: none;
+}
+
+.tk-sidebar-item--collapsed .tk-sidebar-item__label {
+    display: none;
+}

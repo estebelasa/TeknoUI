@@ -1,0 +1,42 @@
+
+:root {
+
+    /* Layout */
+  
+    --tk-sidebar-width:320px;
+    --tk-sidebar-min-width:280px;
+  
+    /* Header */
+  
+    --tk-sidebar-header-padding:var(--tk-base-spacing-8);
+
+    /* Keeps the header band the same height it had when the toggle sat inside it. */
+    --tk-sidebar-header-min-height:101px;
+
+    /* Round collapse toggle sitting on the sidebar's right border. */
+    --tk-sidebar-toggle-size:32px;
+
+    /* Mobile overlay drawer */
+    --tk-sidebar-drawer-max-width:85vw;
+    --tk-sidebar-drawer-z-index:100;
+    --tk-sidebar-backdrop:rgba(0,0,0,.45);
+
+    --tk-sidebar-avatar-size:120px;
+  
+    --tk-sidebar-logo-size:48px;
+  
+    /* Navigation */
+  
+    --tk-sidebar-item-height:48px;
+  
+    --tk-sidebar-item-padding-x:var(--tk-base-spacing-4);
+  
+    --tk-sidebar-item-padding-y:var(--tk-base-spacing-3);
+  
+    --tk-sidebar-item-gap:var(--tk-base-spacing-2);
+  
+    /* Footer */
+  
+    --tk-sidebar-footer-padding:var(--tk-base-spacing-6);
+  
+}

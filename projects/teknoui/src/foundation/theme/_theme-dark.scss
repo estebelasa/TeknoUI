@@ -1,0 +1,71 @@
+/*
+ * Dark theme — "Ink". The inverse of "Paper":
+ * off-white text on a near-black page, lifted surfaces and the brand
+ * green as accent. Elevation is shown with a light "inverse" glow and a
+ * hairline highlight, because dark shadows are invisible on black.
+ * Every text/background pair below is >= 4.5:1 (WCAG AA).
+ */
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Brand green: fills, focus and hover states */
+  --tk-color-primary: var(--tk-base-ghost-green-400);
+  --tk-color-primary-hover: var(--tk-base-ghost-green-300);
+  --tk-color-primary-active: var(--tk-base-ghost-green-200);
+  --tk-color-primary-subtle: var(--tk-base-ghost-green-950);
+
+  /* Surfaces: page < surface < raised */
+  --tk-background: var(--tk-base-zero-black-950);
+  --tk-background-secondary: var(--tk-base-zero-black-900);
+  --tk-surface: var(--tk-base-zero-black-900);
+  --tk-surface-raised: var(--tk-base-zero-black-800);
+  /* Frosted raised surface: lets the background (watermark) show through, blurred. */
+  --tk-surface-glass: rgb(20 27 23 / 0.75);
+  --tk-surface-glass-blur: 10px;
+  --tk-surface-secondary: var(--tk-base-zero-black-700);
+  --tk-surface-tertiary: var(--tk-base-zero-black-600);
+
+  /* Text hierarchy (off-white, not green) */
+  --tk-text-primary: var(--tk-base-zero-black-50);    /* 18.7:1 on page */
+  --tk-text-secondary: var(--tk-base-zero-black-200); /* >= 10:1 */
+  --tk-text-tertiary: var(--tk-base-zero-black-300);  /* >= 7.1:1, also on tags */
+  --tk-text-disabled: var(--tk-base-zero-black-500);
+  --tk-text-inverse: var(--tk-base-zero-black-950);   /* text on green fills: 15.8:1 */
+  --tk-text-accent: var(--tk-base-ghost-green-400);   /* 11.6-15.8:1 */
+
+  /* Borders */
+  --tk-border: var(--tk-base-zero-black-700);
+  --tk-border-subtle: var(--tk-base-zero-black-800);
+  --tk-border-strong: var(--tk-base-zero-black-600);
+  --tk-border-focus: var(--tk-base-ghost-green-400);
+  --tk-border-raised: rgb(244 247 245 / 0.08);
+
+  /* Interaction states */
+  --tk-state-hover: var(--tk-base-zero-black-800);
+  --tk-state-active: var(--tk-base-zero-black-700);
+  --tk-state-selected: var(--tk-base-ghost-green-950);
+  --tk-state-disabled: var(--tk-base-zero-black-800);
+
+  /* Navigation */
+  --tk-navigation-background: var(--tk-base-zero-black-900);
+  --tk-navigation-hover: var(--tk-base-zero-black-800);
+  --tk-navigation-active: var(--tk-base-ghost-green-500);
+  /* Text on green fills (was green on green: the ☰ glyph vanished on hover). */
+  --tk-navigation-active-text: var(--tk-base-zero-black-950);
+
+  /* Status */
+  --tk-status-success: var(--tk-base-ghost-green-400);
+  --tk-status-success-subtle: var(--tk-base-ghost-green-950);
+  --tk-status-warning: #facc15;
+  --tk-status-warning-subtle: #422006;
+  --tk-status-danger: #f87171;
+  --tk-status-danger-subtle: #450a0a;
+
+  /* Elevation: inverse (light) glow + top highlight */
+  --tk-shadow-sm: inset 0 1px 0 rgb(244 247 245 / 0.04);
+  --tk-shadow-md: inset 0 1px 0 rgb(244 247 245 / 0.06), 0 12px 32px -12px rgb(244 247 245 / 0.14);
+  --tk-shadow-lg: inset 0 1px 0 rgb(244 247 245 / 0.08), 0 24px 48px -16px rgb(244 247 245 / 0.18);
+
+  /* Decorative brand watermark behind the content */
+  --tk-watermark-opacity: 0.07;
+}
