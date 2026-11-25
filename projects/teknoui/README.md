@@ -22,7 +22,7 @@ Each component has its own README next to its source in `src/components/`.
 ## Installation
 
 ```bash
-npm install https://github.com/estebelasa/TeknoUI/releases/download/v0.1.0/estebelasa-teknoui-0.1.0.tgz
+npm install https://github.com/estebelasa/TeknoUI/releases/download/v0.1.1/estebelasa-teknoui-0.1.1.tgz
 ```
 
 To upgrade, install the `.tgz` of a newer release.

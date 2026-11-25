@@ -180,7 +180,9 @@ export class TkSidebarComponent {
 
         this.itemSelected.emit(item);
 
-        this.closeMobile();
+        // The user is navigating elsewhere: do not pull focus (and the page)
+        // back to the opener. The application moves focus to the destination.
+        this.closeDrawer(false);
 
     }
 
@@ -200,7 +202,14 @@ export class TkSidebarComponent {
 
     }
 
+    /** Closes the drawer and gives focus back to the element that opened it. */
     closeMobile(): void {
+
+        this.closeDrawer(true);
+
+    }
+
+    private closeDrawer(restoreFocus: boolean): void {
 
         if (!this.mobileOpened()) {
             return;
@@ -208,7 +217,12 @@ export class TkSidebarComponent {
 
         this.actions.closeMobile();
 
-        this.openedFrom?.focus();
+        // preventScroll: returning focus must never move the page (it would
+        // cancel a smooth scroll in progress, e.g. towards a chosen section).
+        if (restoreFocus) {
+            this.openedFrom?.focus({ preventScroll: true });
+        }
+
         this.openedFrom = null;
 
     }
