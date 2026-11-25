@@ -174,6 +174,41 @@ describe('TkSidebarComponent (mobile drawer)', () => {
     });
 
 
+    it('should not give focus back to the opener after choosing a section', async () => {
+
+        await create(true);
+        await open();
+
+        const opener = element.querySelector<HTMLButtonElement>('.opener')!;
+        const focusSpy = vi.spyOn(opener, 'focus');
+
+        host.querySelectorAll<HTMLAnchorElement>('.tk-sidebar-item')[2].click();
+        await fixture.whenStable();
+
+        // Focusing the opener would scroll the page back to it and cancel the
+        // navigation to the chosen section.
+        expect(focusSpy).not.toHaveBeenCalled();
+        expect(document.activeElement).not.toBe(opener);
+
+    });
+
+
+    it('should give focus back without scrolling the page', async () => {
+
+        await create(true);
+        await open();
+
+        const opener = element.querySelector<HTMLButtonElement>('.opener')!;
+        const focusSpy = vi.spyOn(opener, 'focus');
+
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+        await fixture.whenStable();
+
+        expect(focusSpy).toHaveBeenCalledWith({ preventScroll: true });
+
+    });
+
+
     it('should keep Tab and Shift+Tab inside the open drawer', async () => {
 
         await create(true);
