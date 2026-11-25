@@ -1,0 +1,73 @@
+# Release: pushing a tag vX.Y.Z (on a commit already merged into main) builds
+# the library, packs it and attaches the .tgz to a GitHub Release.
+# Applications install it from the release URL:
+#   https://github.com/estebelasa/TeknoUI/releases/download/vX.Y.Z/estebelasa-teknoui-X.Y.Z.tgz
+name: Release
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: read
+
+# Never run two releases at the same time.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build, pack y GitHub Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # create the release and upload the .tgz
+    env:
+      NG_CLI_ANALYTICS: 'false'
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # needed to check that the tag is on main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: El tag coincide con la versión del paquete y está en main
+        run: |
+          VERSION=$(node -p "require('./projects/teknoui/package.json').version")
+          if [ "v$VERSION" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME != version v$VERSION in projects/teknoui/package.json"
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tag $GITHUB_REF_NAME is not on main (merge the PR first)"
+            exit 1
+          fi
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Tests
+        run: npx ng test teknoui --watch=false
+
+      - name: Build de la librería
+        run: npx ng build teknoui
+
+      - name: Empaquetar
+        run: npm pack ./dist/teknoui --pack-destination .
+
+      - name: Crear la GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" estebelasa-teknoui-*.tgz \
+            --title "TeknoUI $GITHUB_REF_NAME" \
+            --generate-notes \
+            --verify-tag

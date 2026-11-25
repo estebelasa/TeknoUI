@@ -1,6 +1,6 @@
 {
   "name": "@estebelasa/teknoui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Angular component library: standalone, zoneless-ready components and design tokens (CSS custom properties) with light/dark themes.",
   "license": "MIT",
   "repository": {

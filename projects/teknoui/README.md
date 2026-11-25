@@ -2,7 +2,7 @@
 
 Angular component library: standalone, zoneless-ready components built with signals, plus a design-token foundation (CSS custom properties) with light and dark themes.
 
-> Status: early development (`0.x`). Not published to a registry yet.
+> Status: early development (`0.x`). Not published to a registry: each version is attached to a [GitHub Release](https://github.com/estebelasa/TeknoUI/releases).
 
 ## Requirements
 
@@ -18,6 +18,14 @@ Angular component library: standalone, zoneless-ready components built with sign
 | Sidebar | `tk-sidebar` | Collapsible navigation sidebar with profile, brand slots and a mobile drawer (focus trap, Escape, backdrop). |
 
 Each component has its own README next to its source in `src/components/`.
+
+## Installation
+
+```bash
+npm install https://github.com/estebelasa/TeknoUI/releases/download/v0.1.0/estebelasa-teknoui-0.1.0.tgz
+```
+
+To upgrade, install the `.tgz` of a newer release.
 
 ## Usage
 
